@@ -1,4 +1,4 @@
-## Welcome to my GitHub Pages
+## Welcome to my GitHub Pages.
 
-Here, 7 projects are given....
+Kindly press the button "View on Github" to see and download my projects.
 
