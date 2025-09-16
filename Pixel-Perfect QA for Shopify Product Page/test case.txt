@@ -1,0 +1,24 @@
+Validate that the product page matches the Figma design and functions correctly.
+
+import { test, expect } from '@playwright/test';
+
+test('Product page visual and functional QA', async ({ page }) => {
+  await page.goto('https://your-mock-shopify-site.com/product/shoes');
+
+  // Check page title
+  await expect(page).toHaveTitle(/Shoes/);
+
+  // Validate layout elements
+  const productImage = page.locator('.product-image');
+  await expect(productImage).toBeVisible();
+
+  const addToCartBtn = page.locator('button:has-text("Add to Cart")');
+  await expect(addToCartBtn).toBeEnabled();
+
+  // Validate typography
+  const priceTag = page.locator('.product-price');
+  await expect(priceTag).toHaveText(/BDT/);
+
+  // Screenshot comparison (optional)
+  await expect(page).toHaveScreenshot('product-page.png', { threshold: 0.2 });
+});
